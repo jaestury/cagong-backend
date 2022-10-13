@@ -56,5 +56,11 @@ class CafeRepositoryTest {
         assertThat(givenCafe.get().getName()).isEqualTo(cafe.getName());
     }
 
+    @Test
+    void 카페주소로_조회하기(){
+        Optional<Cafe> givenCafe = cafeRepository.findByAddress(cafe.getAddress());
 
+        assertThat(givenCafe).isNotEmpty();
+        assertThat(givenCafe.get().getAddress()).isEqualTo(cafe.getAddress());
+    }
 }
