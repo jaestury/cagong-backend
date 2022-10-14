@@ -9,18 +9,18 @@ import javax.validation.constraints.NotBlank;
 
 @Getter
 @NoArgsConstructor
-public class CafeRequestDto {
-    @NotBlank
+public class CafeNameRequestDto {
     private String name;
 
-    @NotBlank
-    private String address;
+    @Builder
+    public CafeNameRequestDto(String name){
+        this.name = name;
+    }
 
     public Cafe toEntity(){
         return Cafe
                 .builder()
                 .name(name)
-                .address(address)
                 .build();
     }
 }

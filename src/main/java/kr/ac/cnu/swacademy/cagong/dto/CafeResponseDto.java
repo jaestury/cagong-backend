@@ -17,19 +17,16 @@ public class CafeResponseDto {
     private Integer seatSelectionCountInNaver;
     private Integer concentrationSelectionCountInNaver;
 
-    private CafeResponseDto(){
-
-    }
-
-    public CafeResponseDto(Cafe cafe, String name, String address, Double averagePrice, Integer concentrationSelectionCountInNaver){
-        this.id = cafe.getId();
-        this.name = name;
-        this.address = address;
-        this.longitude = cafe.getLongitude();
-        this.latitude = cafe.getLatitude();
-        this.averagePrice = averagePrice;
-        this.averageScoreInNaver = cafe.getAverageScoreInNaver();
-        this.seatSelectionCountInNaver = cafe.getSeatSelectionCountInNaver();
-        this.concentrationSelectionCountInNaver = concentrationSelectionCountInNaver;
+    public CafeResponseDto (Cafe entity){
+        this.id = entity.getId();
+        this.name = entity.getName();
+        this.address = entity.getAddress();
+        this.longitude = entity.getLongitude();
+        this.latitude = entity.getLatitude();
+        this.averagePrice = entity.getAveragePrice();
+        this.averageScoreInNaver = entity.getAverageScoreInNaver();
+        this.seatSelectionCountInNaver = entity.getSeatSelectionCountInNaver();
+        this.concentrationSelectionCountInNaver = entity.getConcentrationSelectionCountInNaver();
     }
 }
+
