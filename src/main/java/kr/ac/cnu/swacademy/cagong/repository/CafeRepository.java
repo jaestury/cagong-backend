@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface CafeRepository extends JpaRepository<Cafe, Long> {
 
-    Optional<Cafe> findByName(String name);
+    List<Cafe> findByNameLike(String name);
 
     Optional<Cafe> findByAddress(String address);
 }

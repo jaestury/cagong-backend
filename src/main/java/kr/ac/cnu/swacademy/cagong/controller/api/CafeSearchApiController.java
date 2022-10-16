@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @RestController
 public class CafeSearchApiController {
@@ -14,7 +16,7 @@ public class CafeSearchApiController {
     private final CafeSearchService cafeSearchService;
 
     @GetMapping("/api/cafes")
-    public CafeResponseDto cafe(@RequestParam String name){
+    public List<CafeResponseDto> cafe(@RequestParam String name){
         return cafeSearchService.findByName(name);
     }
 }

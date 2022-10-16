@@ -50,7 +50,7 @@ class CafeRepositoryTest {
 
     @Test
     void 카페이름으로_조회하기() {
-        Optional<Cafe> givenCafe = cafeRepository.findByName(cafe.getName());
+        List<Cafe> givenCafe = cafeRepository.findByNameLike(cafe.getName());
 
         assertThat(givenCafe).isNotEmpty();
         assertThat(givenCafe.get().getName()).isEqualTo(cafe.getName());
